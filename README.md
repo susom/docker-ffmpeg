@@ -37,6 +37,7 @@ From here you should be able to provision credentials like the following:
 # Web Service
 This web service runs FFMPEG to convert a single input file into a single output file.
 
+```
 file:   The upload file contents with a valid file suffix to indicate the format
 action: TRANSCODE (default) or TRANSCRIBE
 
@@ -46,21 +47,24 @@ For Transcoding:
 
 For Transcribing:
     language: en (default), es (spanish), zh (chinese), pt (portuguese)
+```
 
 Example Request:
     POST:
+```
         file => "audio_1.wav"
         format => 'mp3'
         rate => '48000'
-
-    Will return a streamed MP3 file or error message
+```
+Will return a streamed MP3 file or error message
 
 
     POST:
+```
         file => "audio_1.amr"
         language => 'es'
-
-    Will return a json object for the translation of the audio, such as:
+```
+Will return a json object for the translation of the audio, such as:
 ```json
 {
     "results": [
