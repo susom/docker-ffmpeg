@@ -12,7 +12,7 @@ This is a container that does two things:
 
 # Building Container
 ```
-docker build -t ffmpeg:latest .
+docker build -t ffmpeg-web-service:latest .
 ```
 
 # Running Container
@@ -21,7 +21,7 @@ docker run -d --name 'ffmpeg' \
 -e "bluemix_user_pass=xxx:yyy" \
 -p 1080:80 \
 --restart 'unless-stopped' \
-ffmpeg-web-service
+ffmpeg-web-service:latest
 ```
 
 where xxx:yyy equals the service credentials provided from your watson service.  You must first create a watson service with the speech-to-text engine.
